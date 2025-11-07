@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habilidades Blandas</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #264653;
+        background-color: #FAF9F6;
+    }
+
+    /* Navbar (Azul Petróleo - Confianza) */
+    .navbar {
+        background: linear-gradient(135deg, #264653 0%, #2A9D8F 100%);
+        padding: 1.5rem 2rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .navbar h1 {
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    /* Sección de habilidades (Terracota / Naranja cálido) */
+    .skills-section {
+        background: linear-gradient(135deg, #F4A261 0%, #E76F51 100%);
+        padding: 4rem 2rem;
+    }
+
+    .skills-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .skills-title {
+        text-align: center;
+        color: white;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .skill-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    }
+
+    .skill-icon {
+        font-size: 3rem;
+        color: #E76F51;
+        margin-bottom: 1rem;
+    }
+
+    .skill-card h3 {
+        color: #264653;
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Diagrama Section (Verde Suave - Claridad y Balance) */
+    .diagram-section {
+        background: linear-gradient(135deg, #2A9D8F 0%, #3DB9A3 100%);
+        padding: 4rem 2rem;
+    }
+
+    .diagram-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .diagram-title {
+        color: white;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .diagram-placeholder {
+        background: white;
+        border-radius: 12px;
+        padding: 3rem;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #2A9D8F;
+        font-size: 1.5rem;
+    }
+
+    /* Mapa Section (Amarillo Arena - Inspiración) */
+    .map-section {
+        background: linear-gradient(135deg, #E9C46A 0%, #F4A261 100%);
+        padding: 4rem 2rem;
+    }
+
+    .map-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .map-title {
+        color: #264653;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        text-shadow: 2px 2px 4px rgba(255,255,255,0.2);
+    }
+
+    .map-placeholder {
+        background: white;
+        border-radius: 12px;
+        padding: 3rem;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #705C47;
+        font-size: 1.5rem;
+    }
+
+    /* Collage Section (Retorno al Azul Petróleo) */
+    .collage-section {
+        background: linear-gradient(135deg, #264653 0%, #2A9D8F 100%);
+        padding: 4rem 2rem;
+    }
+
+    .collage-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .collage-title {
+        color: white;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .collage-placeholder {
+        background: white;
+        border-radius: 12px;
+        padding: 4rem;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #264653;
+        font-size: 1.5rem;
+    }
+
+    /* Footer (Tonos Oscuros Consistentes) */
+    .footer {
+        background: linear-gradient(135deg, #1D3557 0%, #264653 100%);
+        color: white;
+        padding: 3rem 2rem;
+        text-align: center;
+    }
+
+    .footer p {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-links {
+        margin-top: 1.5rem;
+    }
+
+    .footer-links a {
+        color: #A0D9D0;
+        text-decoration: none;
+        margin: 0 1rem;
+        transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+        color: #F4A261;
+    }
+
+    @media (max-width: 768px) {
+        .skills-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .navbar h1 {
+            font-size: 1.5rem;
+        }
+
+        .skills-title, .diagram-title, .map-title, .collage-title {
+            font-size: 2rem;
+        }
+    }
+</style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>✨ Habilidades Blandas ✨</h1>
+    </nav>
+
+    <!-- Main - Habilidades Blandas -->
+    <main class="skills-section">
+        <div class="skills-container">
+            <h2 class="skills-title">Mis Habilidades Blandas</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🤝</div>
+                    <h3>Trabajo en Equipo</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🔄</div>
+                    <h3>Adaptabilidad al Cambio</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📚</div>
+                    <h3>Aprendizaje Continuo</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">💬</div>
+                    <h3>Comunicación Efectiva</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🤗</div>
+                    <h3>Respeto</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">💡</div>
+                    <h3>Creatividad e Innovación</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">⚡</div>
+                    <h3>Proactividad</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">⏰</div>
+                    <h3>Gestión del Tiempo</h3>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Sección Diagrama -->
+    <section class="diagram-section">
+        <div class="diagram-container">
+            <h2 class="diagram-title">Diagrama de Habilidades</h2>
+            <div class="diagram-placeholder">
+                <p>📊 Aquí va tu diagrama de habilidades</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Mapa -->
+    <section class="map-section">
+        <div class="map-container">
+            <h2 class="map-title">Mapa de Ubicación</h2>
+            <div class="map-placeholder">
+                <p>🗺️ Aquí va tu mapa</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Collage -->
+    <section class="collage-section">
+        <div class="collage-container">
+            <h2 class="collage-title">Collage de Experiencias</h2>
+            <div class="collage-placeholder">
+                <p>🖼️ Aquí va tu collage</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 - Habilidades Blandas Profesionales</p>
+        <p>Desarrollando competencias para el éxito</p>
+        <div class="footer-links">
+            <a href="#skills">Habilidades</a>
+            <a href="#diagram">Diagrama</a>
+            <a href="#map">Mapa</a>
+            <a href="#collage">Collage</a>
+        </div>
+    </footer>
+</body>
+</html>
